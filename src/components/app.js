@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import * as actions from '../actions';
 import Header from './header';
 import Footer from './footer';
-import config from '../../config';
 
 
 
@@ -25,16 +24,16 @@ class App extends Component {
     const options = {
   allowedConnections: ['twitter', 'facebook'],
   auth: {
-     redirectUrl: 'http://localhost:8080/viewpolls',
+     redirectUrl: 'https://vote-rustic-client.herokuapp.com/',
      responseType: 'token'
 }
 };
-console.log('this is the auth0',config.auth0_id)
+console.log('this is the auth0',  process.env.AUTH0_ID )
 
 
     const lock = new Auth0Lock( //initiates new lock. Passed down to header
-        process.env.AUTH0_ID || config.auth0_id,
-        process.env.AUTH0_DOMAIN || config.auth0_domain,
+        process.env.AUTH0_ID,
+        process.env.AUTH0_DOMAIN,
         options
     );
      this.lock = lock;
