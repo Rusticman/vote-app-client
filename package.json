@@ -1,7 +1,7 @@
 {
-  "name": "voting-app-client",
+  "name": "vote-app-client",
   "version": "1.0.0",
-  "description": "voting app clients",
+  "description": "voting app client",
   "main": "index.js",
   "engines": {
    "node": "4.5.0"
