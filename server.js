@@ -6,7 +6,7 @@ const cors = require('cors');
 
 app.use(express.static(__dirname));
 app.use(cors());
-require('dotenv').config();
+
 
 app.get("*", (req,res) => {
   res.sendFile(path.resolve(__dirname, 'index.html'));

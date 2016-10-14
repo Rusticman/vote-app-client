@@ -7,6 +7,7 @@ import reduxThunk from 'redux-thunk';
 import App from './components/app';
 import Homepage from './components/homepage';
 import RequireAuth from './components/auth/require_auth';
+import Signout from './components/auth/signout';
 import CreatePoll from './components/create_poll';
 import ViewPolls from './components/view_polls';
 import MyPolls from './components/my_polls';
@@ -33,6 +34,7 @@ ReactDOM.render(
     <Route path="/" component={App}>
     <IndexRoute component={Homepage} />
       <Route path="createpoll" component={RequireAuth(CreatePoll)} />
+      <Route path="signout" component={Signout} />
       <Route path="viewpolls" component={ViewPolls} />
       <Route path="viewpolls/:pollID" component={ShowPoll} />
       <Route path="mypolls" component={RequireAuth(MyPolls)} />
