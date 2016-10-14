@@ -8,7 +8,7 @@ class Signup extends Component {
     this.props.signupUser(formProps);
   }
 
-  componentWillUnmount(){console.log('working?')
+  componentWillUnmount(){
     this.props.changePage()
   }
 

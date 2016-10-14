@@ -28,7 +28,7 @@ class App extends Component {
      responseType: 'token'
 }
 };
-console.log('this is the auth0',  process.env.AUTH0_ID )
+
 
 
     const lock = new Auth0Lock( //initiates new lock. Passed down to header

@@ -12,7 +12,7 @@ this.props.newItemCreate({pollID,newItem ,newState});
 
 
 
-render(){//console.log(this.props.pollError, 'and:',this.props.itemCreated)
+render(){
 const {auth,itemCreated,handleSubmit,fields:{newItem}} = this.props;
 
 if(!auth){

@@ -67,7 +67,7 @@ export function signupUser({ email, password, userName }) {
 
 
 export function authSignin(userID,name,provider){
-  return function(dispatch){console.log('am i working authsignin')
+  return function(dispatch){
     axios.post(`${ROOT_URL}/auth/signin`,{userID,name,provider})
     .then(response => {
       dispatch({type:AUTH_USER})
@@ -266,7 +266,7 @@ const arrayOfColours = ["#CF000F","#2ecc71","#FF7416","#44BBFF"
    return '#' + r + g + b;
    });
    options.data.datasets[0].backgroundColor = backgroundColor;
-console.log('new data:',options.data.datasets[0].data);
+
 
     dispatch({
       type:CHART_DATA,
