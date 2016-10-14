@@ -13,5 +13,4 @@ app.get("*", (req,res) => {
 });
 
 app.listen(port);
-console.log('in server auth0', process.env.AUTH0_ID)
 console.log('app listening on port', port);

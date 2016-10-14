@@ -4,12 +4,8 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import reduxThunk from 'redux-thunk';
-
 import App from './components/app';
 import Homepage from './components/homepage';
-import Signin from './components/auth/signin';
-import Signout from './components/auth/signout';
-import Signup from './components/auth/signup';
 import RequireAuth from './components/auth/require_auth';
 import CreatePoll from './components/create_poll';
 import ViewPolls from './components/view_polls';
@@ -36,10 +32,7 @@ ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
     <IndexRoute component={Homepage} />
-      <Route path="signin" component={Signin}/>
-      <Route path="signout" component={Signout} />
-      <Route path="signup" component={Signup} />
-      <Route path="createpoll" component={CreatePoll} />
+      <Route path="createpoll" component={RequireAuth(CreatePoll)} />
       <Route path="viewpolls" component={ViewPolls} />
       <Route path="viewpolls/:pollID" component={ShowPoll} />
       <Route path="mypolls" component={RequireAuth(MyPolls)} />

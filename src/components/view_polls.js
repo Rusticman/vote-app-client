@@ -48,7 +48,7 @@ mouseOut(event){
 render(){
 const {allPolls} = this.props;
   if(!allPolls){
-    return <div style={{"textAlign":"center"}}>Please wait while the server awakes from hibernation.  This will also affect logging in, patience is a virtue.</div>
+    return <div style={{"textAlign":"center"}}>Please wait while the server awakes from hibernation. Patience is a virtue.</div>
   }
   else{
     return(
