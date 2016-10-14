@@ -12,7 +12,7 @@ module.exports = {
   },
   plugins: [
        new webpack.EnvironmentPlugin(['AUTH0_ID','AUTH0_DOMAIN'])
-   ]
+   ],
   module: {
     loaders: [{
       exclude: /node_modules/,
