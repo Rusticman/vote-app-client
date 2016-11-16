@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import * as actions from '../actions';
 import Header from './header';
 import Footer from './footer';
-import config from '../../config';
+
 
 
 
@@ -33,8 +33,8 @@ class App extends Component {
 
 
     const lock = new Auth0Lock( //initiates new lock. Passed down to header
-       config.auth0_id ||  process.env.AUTH0_ID,
-      config.auth0_domain ||  process.env.AUTH0_DOMAIN,
+        process.env.AUTH0_ID,
+        process.env.AUTH0_DOMAIN,
         options
     );
      this.lock = lock;
