@@ -5,9 +5,7 @@ import {Link} from 'react-router';
 
 class ViewPolls extends Component{
 
-componentWillMount(){
-this.props.viewAllPolls();
-}
+
 
 renderPolls(){
 const pollArray = this.props.allPolls.map((userPolls) => {

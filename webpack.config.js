@@ -11,7 +11,12 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-       new webpack.EnvironmentPlugin(['AUTH0_ID','AUTH0_DOMAIN'])
+       new webpack.EnvironmentPlugin(['AUTH0_ID','AUTH0_DOMAIN']),
+       new webpack.DefinePlugin({
+    'process.env': {
+      'NODE_ENV': JSON.stringify('production')
+    }
+  })
    ],
   module: {
     loaders: [{

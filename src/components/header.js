@@ -58,7 +58,7 @@ renderLinks(){
         <nav className="header navbar navbar-default">
           <a className="pull-left"><img className="three_voters" alt="Brand" src="../../style/img/3_voters.png"/></a>
             {message}
-              <div className="container-fluid">
+              <div id="headerWrapper">
                 <div className="navbar-header">
                   <ul className="nav navbar-nav pull-md-right">
                   <li className="nav-item" key={7}>
