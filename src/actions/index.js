@@ -13,7 +13,8 @@ import {
   ITEM_CREATED,
   MESSAGE_USER,
   UPDATE_CHART,
-  DELETE_POLL
+  DELETE_POLL,
+  LOADED
 } from './types';
 
 const ROOT_URL = 'https://vote-rustic-server.herokuapp.com';
@@ -118,9 +119,12 @@ export function viewAllPolls(){
         })
       .then(response => {
         dispatch({
+          type:LOADED,
+          payload:true
+        })
+        dispatch({
           type:ALL_POLLS,
           payload:response.data.allPolls
-
         })
 
       })

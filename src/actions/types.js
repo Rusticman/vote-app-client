@@ -11,3 +11,4 @@ export const ITEM_CREATED = 'item_created';
 export const MESSAGE_USER = 'message_user';
 export const UPDATE_CHART = 'update_chart';
 export const DELETE_POLL = 'delete_poll';
+export const LOADED = 'loaded';

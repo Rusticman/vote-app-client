@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../actions';
 import {Link} from 'react-router';
+import Loader from 'react-loader';
 
 class ViewPolls extends Component{
 
@@ -44,9 +45,36 @@ mouseOut(event){
 }
 
 render(){
-const {allPolls} = this.props;
+const {allPolls, loaded} = this.props;
+
+  const loaderOptions = {
+      lines: 13,
+      length: 20,
+      width: 10,
+      radius: 30,
+      scale: 1.00,
+      corners: 1,
+      color: 'white',
+      opacity: 0.25,
+      rotate: 0,
+      direction: 1,
+      speed: 1,
+      trail: 60,
+      fps: 20,
+      zIndex: 2e9,
+      top: '50%',
+      left: '50%',
+      shadow: false,
+      hwaccel: false,
+      position: 'absolute'
+  };
+
   if(!allPolls){
-    return <div style={{"textAlign":"center"}}>Please wait while the server awakes from hibernation. Patience is a virtue.</div>
+    return <div style={{"textAlign":"center"}}>
+    <Loader loaded={loaded} options={loaderOptions} id="loader">
+    </Loader>
+    Please wait while the server awakes from hibernation. Patience is a virtue.
+    </div>
   }
   else{
     return(
@@ -64,7 +92,8 @@ const {allPolls} = this.props;
 
 function mapStateToProps(state){
   return{
-    allPolls:state.polls.allPolls
+    allPolls:state.polls.allPolls,
+    loaded:state.polls.loaded
   }
 }
 

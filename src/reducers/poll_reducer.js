@@ -6,7 +6,8 @@ import {
   HAS_VOTED,
   ITEM_CREATED,
   MESSAGE_USER,
-  UPDATE_CHART
+  UPDATE_CHART,
+  LOADED
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -17,7 +18,8 @@ const INITIAL_STATE = {
                       hasVoted:true,
                       itemCreated:false,
                       'messageForUser':'',
-                      isChartUpdated:false
+                      isChartUpdated:false,
+                      loaded:false
                     };
 
 export default function(state =INITIAL_STATE,action){
@@ -46,6 +48,8 @@ export default function(state =INITIAL_STATE,action){
     case UPDATE_CHART:
         return {...state, isChartUpdated:action.payload}
 
+    case LOADED:
+        return {...state, loaded:action.payload}
   }
  return state;
 }

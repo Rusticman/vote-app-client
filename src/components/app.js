@@ -4,9 +4,6 @@ import * as actions from '../actions';
 import Header from './header';
 import Footer from './footer';
 
-
-
-
 class App extends Component {
   constructor(props){
     super(props);
@@ -20,7 +17,6 @@ class App extends Component {
 
   componentWillMount(){
    this.props.viewAllPolls();//fires up server
-  const newURL = window.location.protocol + "/" + window.location.host  + window.location.pathname;
 
     const options = {
   allowedConnections: ['twitter', 'facebook'],
@@ -33,8 +29,8 @@ class App extends Component {
 
 
     const lock = new Auth0Lock( //initiates new lock. Passed down to header
-        process.env.AUTH0_ID,
-        process.env.AUTH0_DOMAIN,
+      process.env.AUTH0_ID,
+      process.env.AUTH0_DOMAIN,
         options
     );
      this.lock = lock;
