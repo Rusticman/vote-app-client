@@ -19,7 +19,6 @@
     "jsdom": "^8.1.0",
     "lodash": "^3.10.1",
     "mocha": "^2.4.5",
-    "jquery": "^2.2.1"
   },
   "dependencies": {
     "auth0-lock": "^10.4.0",
